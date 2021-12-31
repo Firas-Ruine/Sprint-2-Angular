@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Gestion des etudiants</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav nav-justified mr-auto">
+
+
+
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+          Etudiant
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" *ngIf="authService.isAdmin()" routerLink="/add-etudiant"><i class="bi bi-person-plus-fill"> Ajouter</i></a>
+          <a class="dropdown-item"  routerLink="/etudiants"><i class="bi bi-card-list"> Lister</i></a>
+          <a class="dropdown-item"  routerLink="/rechercheParUniversity" ><i class="bi bi-search"> Recherche par université</i></a>
+        </div>
+      </li>
+      <li class="nav-item dropdown  active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+        Université
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" *ngIf="authService.isAdmin()"  routerLink="/add-university"><i class="bi bi-plus-circle-fill"> Ajouter</i></a>
+          <a class="dropdown-item"   routerLink="/universities"><i class="bi bi-card-list"> Lister</i></a>
+        </div>
+      </li>
+      </ul>
+      <ul class="navbar-nav ml-auto" >
+        <li class="nav-item active"> <a class="nav-link mr-sm-2" *ngIf="authService.isloggedIn"><i class="bi bi-person-circle"> {{authService.loggedUser}}</i></a></li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      <li class="nav-item  active">
+        <a class="nav-link mr-sm-2"  routerLink="/login"><i class="bi bi-box-arrow-in-right"> Login</i></a>
+        </li>
+        <li class="nav-item active">
+        <a class="nav-link mr-sm-2 clickable" (click)="onLogout()"><i class="bi bi-box-arrow-left"> Logout</i></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+

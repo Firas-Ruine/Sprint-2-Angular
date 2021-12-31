@@ -1,0 +1,33 @@
+<div class="container mt-5">
+  <div class="row justify-content-md-center">
+      <div class="col-md-4">
+        <div class="card mt-5">
+          <div class="card-body">
+        <div class="alert alert-danger" *ngIf="err==1">
+          <strong>login ou mot de passe erronés..</strong>
+        </div>
+
+         <form >
+              <strong> <h2 class="form-group row justify-content-md-center">Login </h2></strong>
+                 <div class="form-group">
+                      <label >Nom Utilisateur :</label>
+                      <input type="text" name="username"
+                      class="form-control"
+                      [(ngModel)]="user.username" >
+                  </div>
+                  <div class="form-group">
+                      <label >Mot de passe :</label>
+                      <input type="password"    name="password"
+                       [(ngModel)]="user.password"   class="form-control">
+                  </div>
+                 <div  class="row justify-content-md-center ">
+                      <button type="button" (click)="onLoggedin()"
+                      class="btn btn-primary">Connexion</button>
+                </div>
+
+          </form>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

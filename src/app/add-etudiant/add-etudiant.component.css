@@ -1,0 +1,16 @@
+.container
+{
+  align-items: center;
+  float: center;
+  margin-left: 500px;
+}
+.btn
+{
+  float: center;
+  width: 340px;
+}
+.title
+{
+  text-align: left;
+  margin-left: 40px;
+}

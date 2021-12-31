@@ -1,0 +1,39 @@
+
+<div class="container mt-5 ">
+  <div>
+  <h2 class="mb-5 title">Ajouter un Etudiant : </h2>
+  </div>
+  <form >
+    <div class="col-sm-4 col-md-4 col-lg-4">
+    <label >ID Etudiant</label>
+    <input disabled type="text" [(ngModel)]= "newEtudiant.idEtudiant" name="idEtudiant" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+    <label >Nom Etudiant</label>
+    <input type="text"[(ngModel)]="newEtudiant.nom" name="nom" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+    <label >Prenom Etudiant</label>
+    <input type="text" [(ngModel)]="newEtudiant.prenom" name="prenom" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+    <label >Date Inscription</label>
+    <input type="date" [(ngModel)]="newEtudiant.dateInscri" name="dateCreation" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label >Section</label>
+      <input type="text" [(ngModel)]="newEtudiant.section" name="Section" class="form-control">
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <label>Université </label>
+        <select class="form-control" id="idUni" [(ngModel)]="newEtudiant.universite" [ngModelOptions]="{standalone: true}">
+                <option [selected]="true">--Select Université--</option>
+                <option  *ngFor="let uni of universityList" [ngValue]="uni">{{uni.nom}}</option>
+            </select>
+        </div>
+    <div class="col-sm-4 btn">
+    <button type="submit" (click)="addEtudiant()" class="btn btn-primary">Ajouter</button>
+    </div>
+    </form>
+    </div>
+
